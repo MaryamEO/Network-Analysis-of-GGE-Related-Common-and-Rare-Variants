@@ -10,3 +10,6 @@ Here we have listed the software that have been employed for the stated analysis
 | [NetColoc](https://pypi.org/project/netcoloc/)|Building colocalized gene networks|
 | [UpSetR ](https://github.com/hms-dbmi/UpSetR)  |Defining the intersection of the gene sets|
 | [tidyverse](https://github.com/tidyverse)  |To model, modify, and visualize data in R|
+| [data.table](https://github.com/Rdatatable/data.table)  |Reading files in R|
+| [openxlsx](https://github.com/ycphs/openxlsx)  |Handling .xlsx files in R|
+| [readxl](https://github.com/tidyverse/readxl)  |Handling .xlsx files in R|
