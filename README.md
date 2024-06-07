@@ -9,3 +9,4 @@ Here we have listed the software that have been employed for the stated analysis
 | ------------- | ------------- |
 | [NetColoc](https://pypi.org/project/netcoloc/)|Building colocalized gene networks|
 | [UpSetR ](https://github.com/hms-dbmi/UpSetR)  |Defining the intersection of the gene sets|
+| [tidyverse](https://github.com/tidyverse)  |To model, modify, and visualize data in R|
