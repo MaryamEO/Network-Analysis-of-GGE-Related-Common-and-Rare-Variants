@@ -14,3 +14,4 @@ Here we have listed the software that have been employed for the stated analysis
 | [openxlsx](https://github.com/ycphs/openxlsx)  |Handling .xlsx files in R|
 | [readxl](https://github.com/tidyverse/readxl)  |Handling .xlsx files in R|
 | [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)  |Retrieving official gene symbols in R|
+| [pacman](https://github.com/trinker/pacman)  |Package management tool in R|
