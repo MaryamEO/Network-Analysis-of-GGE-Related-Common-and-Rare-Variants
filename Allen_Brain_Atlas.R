@@ -44,7 +44,6 @@ list_subNetwork <- lapply(split(subNetwork, by = "represents"), function(x) unli
 
 clusters <- names(list_subNetwork)
 
-# Table_top <- tibble::tibble()
 
 Table <- tibble::tibble()
 
@@ -69,8 +68,6 @@ for(cluster in clusters) {
     dplyr::mutate(dbs = "Allen_Brain_Atlas_10x_scRNA_2021") %>%
     dplyr::mutate(subnetwork = cluster)
   
-  # top_Allen_Brain_Atlas <- Allen_Brain_Atlas[1:5, ]
-  
   if (nrow(Allen_Brain_Atlas)> 0) {
     
     print("save")
@@ -78,8 +75,6 @@ for(cluster in clusters) {
     Table <- Table %>%
       dplyr::bind_rows(Allen_Brain_Atlas)
     
-    #Table_top <- Table_top %>%
-      #dplyr::bind_rows(top_Allen_Brain_Atlas) 
   } else {
     
     print("no enrichment")
@@ -97,13 +92,11 @@ write_tsv(Table, "/mnt/data/epi25_rare/Network/Analysis/Allen_Brain_Atlas/Allen_
 
 # Map your data to this taxonomy that has been provide in this paper "https://www.nature.com/articles/s41586-021-03465-8"
 
-# Data <- fread("/mnt/data/epi25_rare/Network/Analysis/Allen_Brain_Atlas/Allen_Brain_Atlas_PTV.tsv")
-
 Data <- Table 
 
 ID <- readxl::read_excel (base::paste("/mnt/data/epi25_rare/Network/Analysis/Allen_Brain_Atlas/Supplementary Table 1.xlsx",
                                       sep = ""))
-
+                          
 ID <- ID %>%
   dplyr::select(`pCL_name (or CL_name)`,
                 `pCL_id (or CL_id)`,
