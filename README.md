@@ -18,7 +18,7 @@ Here we have listed the software that have been employed for the stated analysis
 | [pacman](https://github.com/trinker/pacman)  |Package management tool in R|
 | [enrichR](https://github.com/trinker/pacman)  |Brain Cell Type Specific Enrichment Analysis in R|
 | [rDGIdb](https://github.com/cbg-ethz/rDGIdb)  |R Wrapper for DGIdb|
-| [simplifyEnrichment](https://jokergoo.github.io/simplifyEnrichment/articles/simplifyEnrichment.html)  |the semantic similarity matrix of GO terms|
+| [simplifyEnrichment](https://jokergoo.github.io/simplifyEnrichment/articles/simplifyEnrichment.html)  |The semantic similarity matrix of GO terms|
 | [networkD3](https://github.com/christophergandrud/networkD3)  |Visulization of drug-gene intercation network|
 | [tidygraph ](https://github.com/thomasp85/tidygraph)  |Characterization of drug-gene interaction network|
 
