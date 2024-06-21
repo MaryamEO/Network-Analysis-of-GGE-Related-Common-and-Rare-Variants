@@ -8,6 +8,9 @@ Here we have listed the software that have been employed for the stated analysis
 | Software   | Purpose |  
 | ------------- | ------------- |
 | [NetColoc](https://pypi.org/project/netcoloc/)|Building colocalized gene networks|
+| [Cytoscape](https://manual.cytoscape.org/en/stable/)|Network Visulization|
+| [yFiles](https://www.yworks.com/products/yfiles-layout-algorithms-for-cytoscape)|Hierarchical Layout Visulization of the networks|
+| [NDEx](https://www.ndexbio.org/index.html#/)|Network storage platform|
 | [gprofiler](https://pypi.org/project/gprofiler-official/)|Pathway enrichment analysis|
 | [UpSetR ](https://github.com/hms-dbmi/UpSetR)  |Defining the intersection of the gene sets|
 | [tidyverse](https://github.com/tidyverse)  |To model, modify, and visualize data in R|
