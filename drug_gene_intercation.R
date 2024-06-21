@@ -31,7 +31,8 @@ p_load(readr,
        ,networkD3,
        gplots,
        corrplot,
-       simplifyEnrichment
+       simplifyEnrichment,
+       signatureSearch
        )
 
 
@@ -90,7 +91,6 @@ for(cluster in clusters) {
     # The Drug Set Enrichment Analysis (DSEA) with GSEA algorithm (dsea_GSEA function)
     drugList <- c(unique(drugs$Drug))
     
-    # https://www.youtube.com/watch?v=ShGJy5beTJo
     tryCatch( 
       {
         dsea_hyperG(
