@@ -20,15 +20,14 @@ p_load(readr,
        ggdist,
        colorspace,
        scales,
-       knitr,
        orthogene,
        openxlsx,
        purrr,
        limma,
        rDGIdb,
        ggraph,
-       tidygraph
-       ,networkD3,
+       tidygraph,
+       networkD3,
        gplots,
        corrplot,
        simplifyEnrichment,
@@ -36,21 +35,21 @@ p_load(readr,
        )
 
 
+set.seed(123)
 
-#  Mining the Drug able Genome for Personalized Medicine per gene in each subcluster 
+#  Mining the Drug able Genome for Personalized Medicine per gene in each subcluster ---- 
 
 databases <- rDGIdb::sourceDatabases()
 
 
 #  reading the file with the subnetworks information 
-subNetwork <- fread ("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/GGE_PTV/hierarchy_filter_GGE_ptv.tsv")
+subNetwork <- fread ("hierarchy_filter_GGE_ptv.tsv")
 
 # make a list of genes within each subnetwork 
 list_subNetwork <- lapply(split(subNetwork, by = "represents"), function(x) unlist(strsplit(x$CD_MemberList, " ")))
 
 clusters <- names(list_subNetwork)
 
-# retrieving the lists of drugs and their corresponding go terms associated with the genes within each cluster 
 data <- tibble::tibble()
 
 for(cluster in clusters) {
@@ -80,14 +79,14 @@ for(cluster in clusters) {
   if (cluster == "C314") {
     
     write_tsv(drugs,
-              "/mnt/data/epi25_rare/Network/Analysis/Common_Rare/Drug_network_PTV_C314.tsv",
+              "Drug_network_PTV_C314.tsv",
               col_names = TRUE)
   }
   
   # Drugs 
 
   if (nrow(drugs) > 0) {
-    
+    # retrieving the lists of drugs and their corresponding go terms associated with the genes within each cluster 
     # The Drug Set Enrichment Analysis (DSEA) with GSEA algorithm (dsea_GSEA function)
     drugList <- c(unique(drugs$Drug))
     
@@ -120,15 +119,15 @@ for(cluster in clusters) {
   
 
 write_tsv(data,
-          "/mnt/data/epi25_rare/Network/Analysis/Common_Rare/Drug_GO_Cluster_PTV.tsv",
+          "Drug_GO_Cluster_PTV.tsv",
           col_names = TRUE)
 
 
   
 
-# Create data
+# GO similarity matrix # ----
 
-networkData <-  fread ("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/Drug_GO_Cluster_PTV.tsv")
+networkData <-  fread ("Drug_GO_Cluster_PTV.tsv")
 
 test <- networkData %>%
   dplyr::filter(subnetwork == "C314")
@@ -139,14 +138,14 @@ mat = GO_similarity(unique(test$ID))
 cl = binary_cut(mat)
 export_to_shiny_app(mat, cl)
 
+# network visualization # ----
 
 # https://stackoverflow.com/questions/42324064/directed-graph-using-networkd3-and-a-data-frame
 # http://www.sthda.com/english/articles/33-social-network-analysis/136-network-analysis-and-manipulation-using-r/ 
 # https://stackoverflow.com/questions/46899144/r-add-title-to-networkd3-plot-and-save
 # https://tidygraph.data-imaginist.com/reference/centrality.html
 
-# network visualization # ----
-drugs <- fread ("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/Drug_network_PTV_C314.tsv")
+drugs <- fread ("Drug_network_PTV_C314.tsv")
 
 drugs <- drugs %>%
   dplyr::mutate(Symbols = alias2SymbolTable(drugs$Gene)) %>%
@@ -158,14 +157,12 @@ networkData <- drugs %>%
 
 drug.net <-  as_tbl_graph(networkData)
 
-set.seed(123)
 drug.net %>%
   activate(nodes) %>%
   mutate(centrality = centrality_alpha()) %>%
   mutate (degree = centrality_degree())-> drug_net
 
 drug_net <- as_tibble(drug_net)
-
 
 node_gene <- c(networkData$Gene)
 node_drug <- c(networkData$Drug)
@@ -175,19 +172,22 @@ new_min <- 0.01
 new_max <- 3
 
 # common variant genes
-common <- fread("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/GGE/GGE_common.tsv")
+common <- fread("GGE_common.tsv")
 
 common <- common %>%
   dplyr::mutate(Symbols = alias2SymbolTable(common$gene)) %>%
   dplyr::mutate (Symbols = dplyr::if_else(is.na(Symbols), gene, Symbols))
+                          
 # rare variant genes
-rare <- fread("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/GGE/GGE_PTV.tsv")
+rare <- fread("GGE_PTV.tsv")
 rare <- rare %>%
   dplyr::mutate(Symbols = alias2SymbolTable(rare$gene)) %>%
   dplyr::mutate (Symbols = dplyr::if_else(is.na(Symbols), gene, Symbols))
 
 nodeFactors <- factor(sort(unique(c(node_gene, node_drug))))
+                          
 nodes <- data.frame(name = nodeFactors)
+                          
 nodes <- nodes%>%
   dplyr::mutate(group = ifelse(nodes$name %in% node_gene, "Network Proximal Genes", "Drugs")) %>%
   dplyr::mutate(group = ifelse(nodes$name %in% common$Symbols & !(nodes$name %in% rare$Symbols), "Common Variant Genes", group)) %>%
@@ -198,22 +198,24 @@ nodes <- nodes%>%
   dplyr::mutate(scaled_sizes = ((degree * (new_max - new_min)) + new_min))
 
 write_tsv(nodes,
-          "/mnt/data/epi25_rare/Network/Analysis/Common_Rare/nodes_PTV.tsv",
+          "nodes_PTV.tsv",
           col_names = TRUE)
 
-  # Scale centrality values to the desired size range
+# Scale centrality values to the desired size range
 
 node_gene <- match(node_gene, levels(nodeFactors)) - 1
 node_drug <- match(node_drug, levels(nodeFactors)) - 1
 
 links <- data.frame(node_gene, node_drug)
+                          
 links <- links%>%
   dplyr::mutate(n = 1) %>%
   dplyr::mutate(as.factor(n))
 
 # https://www.rdocumentation.org/packages/networkD3/versions/0.4/topics/forceNetwork
 # https://d3js.org/d3-scale/ordinal#scaleOrdinal
-
+# HTML generation
+                          
 library(htmltools)
 library(magrittr)
 library(htmlwidgets)
@@ -240,18 +242,4 @@ forceNetwork(Links = links,
   ) %>%
   htmlwidgets::prependContent(htmltools::tags$h1("Drug–Gene Interactions Due to Contribution of GGE-related Common Variants and Protein-Truncating URVs ")) %>%
   htmlwidgets::prependContent(htmltools::tags$footer("The size of the nodes corresponds to their degree")) %>%
-  saveNetwork(file = '/mnt/data/epi25_rare/Network/Analysis/Common_Rare/GGE_Common_PTV.html')
-
-
-
-#%>%
-  #ggraph(layout = "graphopt") +
-  #geom_edge_link(width = 1, colour = "lightgray") +
-  #geom_node_point(aes(colour = centrality), size = 4) +
-  #geom_node_text(aes(label = ), repel = TRUE)+
-  #theme_graph()
-
-
-
-
-
+  saveNetwork(file = 'GGE_Common_PTV.html')
