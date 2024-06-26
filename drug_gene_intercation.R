@@ -83,11 +83,11 @@ for(cluster in clusters) {
               col_names = TRUE)
   }
   
-  # Drugs 
+# retrieving the lists of drugs and their corresponding go terms associated with the genes within each cluster 
+# The Drug Set Enrichment Analysis (DSEA) with GSEA algorithm (dsea_GSEA function)
 
   if (nrow(drugs) > 0) {
-    # retrieving the lists of drugs and their corresponding go terms associated with the genes within each cluster 
-    # The Drug Set Enrichment Analysis (DSEA) with GSEA algorithm (dsea_GSEA function)
+  
     drugList <- c(unique(drugs$Drug))
     
     tryCatch( 
