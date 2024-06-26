@@ -36,15 +36,13 @@ dbs <- c("Allen_Brain_Atlas_10x_scRNA_2021") #  the dataset
 # loading the network 
 # This is the datatable mentioned in the supplementary as "Subnetworks Hierarchy"
 
-subNetwork <- fread ("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/GGE_PTV/hierarchy_filter_GGE_ptv.tsv")
+subNetwork <- fread ("hierarchy_filter_GGE_ptv.tsv")
 
 # splitting the network to the identified subnetworks 
 
 list_subNetwork <- lapply(split(subNetwork, by = "represents"), function(x) unlist(strsplit(x$CD_MemberList, " ")))
 
 clusters <- names(list_subNetwork)
-
-# Table_top <- tibble::tibble()
 
 Table <- tibble::tibble()
 
@@ -69,8 +67,6 @@ for(cluster in clusters) {
     dplyr::mutate(dbs = "Allen_Brain_Atlas_10x_scRNA_2021") %>%
     dplyr::mutate(subnetwork = cluster)
   
-  # top_Allen_Brain_Atlas <- Allen_Brain_Atlas[1:5, ]
-  
   if (nrow(Allen_Brain_Atlas)> 0) {
     
     print("save")
@@ -78,8 +74,6 @@ for(cluster in clusters) {
     Table <- Table %>%
       dplyr::bind_rows(Allen_Brain_Atlas)
     
-    #Table_top <- Table_top %>%
-      #dplyr::bind_rows(top_Allen_Brain_Atlas) 
   } else {
     
     print("no enrichment")
@@ -87,23 +81,20 @@ for(cluster in clusters) {
     empty <- append(empty, cluster)
     
   }
-  
 }
 
 
-write_tsv(Table, "/mnt/data/epi25_rare/Network/Analysis/Allen_Brain_Atlas/Allen_Brain_Atlas_PTV.tsv",
+write_tsv(Table, "Allen_Brain_Atlas_PTV.tsv",
           col_names = TRUE)
 
 
 # Map your data to this taxonomy that has been provide in this paper "https://www.nature.com/articles/s41586-021-03465-8"
 
-# Data <- fread("/mnt/data/epi25_rare/Network/Analysis/Allen_Brain_Atlas/Allen_Brain_Atlas_PTV.tsv")
-
 Data <- Table 
 
-ID <- readxl::read_excel (base::paste("/mnt/data/epi25_rare/Network/Analysis/Allen_Brain_Atlas/Supplementary Table 1.xlsx",
+ID <- readxl::read_excel (base::paste("Supplementary Table 1.xlsx",
                                       sep = ""))
-
+                          
 ID <- ID %>%
   dplyr::select(`pCL_name (or CL_name)`,
                 `pCL_id (or CL_id)`,
@@ -123,7 +114,7 @@ Data_cluster <- Data %>%
                 - Expression)
 
 write_tsv(Data_cluster, 
-          "/mnt/data/epi25_rare/Network/Analysis/Allen_Brain_Atlas/Human_Allen_Brain_Atlas_PTV.tsv",
+          "Human_Allen_Brain_Atlas_PTV.tsv",
           col_names = TRUE)
   
 
@@ -158,7 +149,7 @@ data$labelPosition <- (data$ymax + data$ymin) / 2
 
 data$label <- paste0(data$Var1, "\n value: ", round(data$fraction * 100), "%")
 
-# Making the Figure
+# A donut chart
 
 ggplot(data, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=Var1)) +
   geom_rect() +
@@ -174,7 +165,7 @@ ggplot(data, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=3, fill=Var1)) +
         title =element_text(size=18, face='bold')) -> fig
 
 
-ggsave(paste("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/Allen_Brain_PTV",
+ggsave(paste("Allen_Brain_PTV",
              ".png",
              sep = ""),
        fig,
@@ -185,6 +176,3 @@ ggsave(paste("/mnt/data/epi25_rare/Network/Analysis/Common_Rare/Allen_Brain_PTV"
        height = 40,
        units = "cm",
        bg = "white")
-
-
-
