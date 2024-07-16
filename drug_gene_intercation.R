@@ -6,8 +6,7 @@ if (!require ('pacman')){
 }
 
 
-p_load(readxl,
-       data.table,
+p_load(data.table,
        tidyverse,
        openxlsx,
        limma,
