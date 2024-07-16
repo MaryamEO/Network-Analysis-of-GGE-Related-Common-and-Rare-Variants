@@ -36,7 +36,7 @@ Here we have listed the datbases that have been quried for the stated analysis.
 * [RNA HPA Brain Gene Data](https://www.proteinatlas.org/about/download)
 * [The Human Gene Mutation Database](https://www.hgmd.cf.ac.uk/ac/index.php)
 * Allen_Brain_Atlas_10x_scRNA_2021 Database
-* [Drug-Gene Interaction Databas](https://www.dgidb.org/)
+* [Drug-Gene Interaction Database](https://www.dgidb.org/)
 * [Mouse Genome Informatics (MGI) Database](https://www.informatics.jax.org/)
 * [DisGeNET Database](https://www.disgenet.org/)
 
