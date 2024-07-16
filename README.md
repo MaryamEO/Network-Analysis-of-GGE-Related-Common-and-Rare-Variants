@@ -33,12 +33,12 @@ Here we have listed the datbases that have been quried for the stated analysis.
 * [GGE-GWAS](https://www.nature.com/articles/s41588-023-01485-w)
 * [GGE-WES](https://www.medrxiv.org/content/10.1101/2023.02.22.23286310v1)
 * [Monogenic Epilepsy Genes](https://github.com/bahlolab/genes4epilepsy)
-* [RNA HPA brain gene data](https://www.proteinatlas.org/about/download)
+* [RNA HPA Brain Gene Data](https://www.proteinatlas.org/about/download)
 * [The Human Gene Mutation Database](https://www.hgmd.cf.ac.uk/ac/index.php)
 * Allen_Brain_Atlas_10x_scRNA_2021 database
 * [Drug-Gene Interaction Databas](https://www.dgidb.org/)
-* [Mouse Genome Informatics (MGI) database](https://www.informatics.jax.org/)
-* [DisGeNET database](https://www.disgenet.org/)
+* [Mouse Genome Informatics (MGI) Database](https://www.informatics.jax.org/)
+* [DisGeNET Database](https://www.disgenet.org/)
 
 
 
