@@ -24,7 +24,7 @@ Here we have listed the software that have been employed for the stated analysis
 * [ggtext](https://github.com/wilkelab/ggtext)
 * [htmltools](https://github.com/rstudio/htmltools)
 * [htmlwidgets](https://github.com/ramnathv/htmlwidgets)
-## software platform
+## Software Platforms
 * [NDEx](https://home.ndexbio.org/index/)
 * [Cytoscape](https://cytoscape.org/)
 * [yFiles](https://www.yworks.com/products/yfiles-layout-algorithms-for-cytoscape)
