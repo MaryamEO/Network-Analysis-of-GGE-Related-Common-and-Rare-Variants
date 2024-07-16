@@ -28,6 +28,20 @@ Here we have listed the software that have been employed for the stated analysis
 * [Cytoscape](https://cytoscape.org/)
 * [yFiles](https://www.yworks.com/products/yfiles-layout-algorithms-for-cytoscape)
 
+# Databases 
+Here we have listed the datbases that have been quried for the stated analysis.
+* [GGE-GWAS](https://www.nature.com/articles/s41588-023-01485-w)
+* [GGE-WES](https://www.medrxiv.org/content/10.1101/2023.02.22.23286310v1)
+* [Monogenic Epilepsy Genes](https://github.com/bahlolab/genes4epilepsy)
+* [RNA HPA brain gene data](https://www.proteinatlas.org/about/download)
+
+
+
+
+
+
+
+
   
 
 
