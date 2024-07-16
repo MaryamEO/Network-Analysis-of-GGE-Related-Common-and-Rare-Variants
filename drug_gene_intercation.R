@@ -6,30 +6,17 @@ if (!require ('pacman')){
 }
 
 
-p_load(readr,
-       readxl,
+p_load(readxl,
        igraph,
-       dplyr,
-       ggplot2,
        data.table,
        tidyverse,
-       ggtext,
-       patchwork,
-       ggpubr,
-       janitor,
-       ggdist,
-       colorspace,
-       scales,
-       orthogene,
        openxlsx,
-       purrr,
        limma,
        rDGIdb,
        ggraph,
        tidygraph,
        networkD3,
        gplots,
-       corrplot,
        simplifyEnrichment,
        signatureSearch
        )
@@ -217,7 +204,6 @@ links <- links%>%
 # HTML generation
                           
 library(htmltools)
-library(magrittr)
 library(htmlwidgets)
 
 forceNetwork(Links = links,
