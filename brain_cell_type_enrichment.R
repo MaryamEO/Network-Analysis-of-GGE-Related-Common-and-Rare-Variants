@@ -8,16 +8,8 @@ if (!require ('pacman')){
 
 p_load(data.table,
        tidyverse,
-       ggtext,
-       ggpubr,
-       janitor,
-       ggdist,
-       gghalves,
-       colorspace,
-       purrr,
        limma,
-       enrichR,
-       stringr)
+       enrichR)
 
 # https://cran.r-project.org/web/packages/enrichR/vignettes/enrichR.html
 
