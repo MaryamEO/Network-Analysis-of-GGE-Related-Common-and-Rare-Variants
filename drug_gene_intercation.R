@@ -7,16 +7,13 @@ if (!require ('pacman')){
 
 
 p_load(readxl,
-       igraph,
        data.table,
        tidyverse,
        openxlsx,
        limma,
        rDGIdb,
-       ggraph,
        tidygraph,
        networkD3,
-       gplots,
        simplifyEnrichment,
        signatureSearch
        )
