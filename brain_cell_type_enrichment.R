@@ -6,10 +6,7 @@ if (!require ('pacman')){
 }
 
 
-p_load(readr,
-       dplyr,
-       ggplot2,
-       data.table,
+p_load(data.table,
        tidyverse,
        ggtext,
        ggpubr,
