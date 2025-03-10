@@ -15,7 +15,6 @@ Here we have listed the software that have been employed for the stated analysis
 * [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)
 * [pacman](https://github.com/trinker/pacman)
 * [enrichR](https://github.com/trinker/pacman)
-* [rDGIdb](https://github.com/cbg-ethz/rDGIdb)
 * [signatureSearch](https://bioconductor.org/packages/release/bioc/html/signatureSearch.html)
 * [simplifyEnrichment](https://jokergoo.github.io/simplifyEnrichment/articles/simplifyEnrichment.html)
 * [networkD3](https://github.com/christophergandrud/networkD3)
