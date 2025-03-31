@@ -77,7 +77,7 @@ write_tsv(Table, "Allen_Brain_Atlas_PTV.tsv",
           col_names = TRUE)
 
 
-# Map your data to this taxonomy that has been provide in this paper "https://www.nature.com/articles/s41586-021-03465-8"
+# Map the data to this taxonomy that has been provided in this paper "https://www.nature.com/articles/s41586-021-03465-8"
 
 Data <- Table 
 
