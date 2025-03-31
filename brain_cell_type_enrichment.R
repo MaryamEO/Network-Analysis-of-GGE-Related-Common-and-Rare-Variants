@@ -8,7 +8,6 @@ if (!require ('pacman')){
 
 p_load(data.table,
        tidyverse,
-       limma,
        enrichR)
 
 # https://cran.r-project.org/web/packages/enrichR/vignettes/enrichR.html
