@@ -92,8 +92,8 @@ ID <- ID %>%
 Data_cluster <- Data %>%
   dplyr::mutate(Overlap = sprintf('"%s"', Data$Overlap)) %>%
   filter(grepl('Human', Term)) %>%
-  mutate(Term = gsub('Human', '', Term),  # Remove 'Human' from Term
-         matches = str_match(Term, "^\\s*(.*?)\\s+(\\S+)$"),  # Extract matches
+  mutate(Term = gsub('Human', '', Term),  # removeing 'Human' from the terms
+         matches = str_match(Term, "^\\s*(.*?)\\s+(\\S+)$"),  # extracting matches
          Cell = matches[, 2],  # Extract first part (Cell)
          Expression = matches[, 3]) %>%
   dplyr::inner_join(ID,
