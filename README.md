@@ -30,7 +30,7 @@ Here we have listed the software that have been employed for the stated analysis
 # Databases 
 Here we have listed the datbases that have been quried for the stated analysis.
 * [GGE-GWAS](https://www.nature.com/articles/s41588-023-01485-w)
-* [GGE-WES](https://www.medrxiv.org/content/10.1101/2023.02.22.23286310v1)
+* [GGE-WES](https://www.nature.com/articles/s41593-024-01747-8)
 * [Monogenic Epilepsy Genes](https://github.com/bahlolab/genes4epilepsy)
 * [RNA HPA Brain Gene Data](https://www.proteinatlas.org/about/download)
 * [The Human Gene Mutation Database](https://www.hgmd.cf.ac.uk/ac/index.php)
