@@ -17,6 +17,7 @@ Here we have listed the software that have been employed for the stated analysis
 * [enrichR](https://github.com/trinker/pacman)
 * [signatureSearch](https://bioconductor.org/packages/release/bioc/html/signatureSearch.html)
 * [simplifyEnrichment](https://jokergoo.github.io/simplifyEnrichment/articles/simplifyEnrichment.html)
+* [GeneOverlap](https://bioconductor.org/packages/release/bioc/html/GeneOverlap.html)
 * [networkD3](https://github.com/christophergandrud/networkD3)
 * [tidygraph](https://github.com/thomasp85/tidygraph)
 * [ggtext](https://github.com/wilkelab/ggtext)
