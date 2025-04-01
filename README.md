@@ -25,7 +25,7 @@ Here we have listed the software that have been employed for the stated analysis
 * [htmlwidgets](https://github.com/ramnathv/htmlwidgets)
 ## Software Platforms
 * [NDEx](https://home.ndexbio.org/index/)
-* [Cytoscape](https://cytoscape.org/)
+* [Cytoscape ver.3.10.3](https://cytoscape.org/)
 * [yFiles](https://www.yworks.com/products/yfiles-layout-algorithms-for-cytoscape)
 
 # Databases 
