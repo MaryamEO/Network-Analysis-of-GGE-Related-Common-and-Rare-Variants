@@ -6,7 +6,7 @@ Here we have listed the software that have been employed for the stated analysis
 
 ## Python Packages
 * [NetColoc](https://pypi.org/project/netcoloc/)
-* [gprofiler](https://pypi.org/project/gprofiler-official/)
+* [gprofiler-official](https://pypi.org/project/gprofiler-official/)
 ## R Packages
 * [tidyverse](https://github.com/tidyverse)
 * [data.table](https://github.com/Rdatatable/data.table)
