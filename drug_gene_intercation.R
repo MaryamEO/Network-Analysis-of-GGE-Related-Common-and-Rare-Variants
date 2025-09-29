@@ -177,8 +177,8 @@ drug.net <-  as_tbl_graph(networkData)
 
 drug.net %>%
   activate(nodes) %>%
-  mutate(centrality = centrality_alpha()) %>%
-  mutate (degree = centrality_degree())-> drug_net
+  dplyr::mutate(centrality = centrality_alpha()) %>%
+  dplyr::mutate (degree = centrality_degree())-> drug_net
 
 drug_net <- as_tibble(drug_net)
 
