@@ -93,7 +93,7 @@ Data_cluster <- Data %>%
   filter(grepl('Human', Term)) %>%
   mutate(Term = gsub('Human', '', Term),  # removeing 'Human' from the terms
          matches = str_match(Term, "^\\s*(.*?)\\s+(\\S+)$"),  # extracting matches
-         Cell = matches[, 2],  # Extract first part (Cell)
+         Cell = matches[, 2],  # extracting first part (Cell)
          Expression = matches[, 3]) %>%
   dplyr::inner_join(ID,
                     by = c("Cell" = "pCL_name (or CL_name)")) %>%
@@ -117,23 +117,23 @@ data <- as.data.frame(table(Data_cluster_sub$neuron_type
                             ,useNA = "ifany"
                             ))
 
-# percentages
+# Percentages
 
 data$fraction <- data$Freq / sum(data$Freq)
 
-# the cumulative percentages (top of each rectangle)
+# The cumulative percentages (top of each rectangle)
 
 data$ymax <- cumsum(data$fraction)
 
-# the bottom of each rectangle
+# The bottom of each rectangle
 
 data$ymin <- c(0, head(data$ymax, n=-1))
 
-# label position
+# Label position
 
 data$labelPosition <- (data$ymax + data$ymin) / 2
 
-# label
+# Label
 
 data$label <- paste0(data$Var1, "\n value: ", round(data$fraction * 100), "%")
 
