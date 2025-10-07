@@ -24,6 +24,7 @@ Here we have listed the software that have been employed for the stated analysis
 * [htmltools](https://github.com/rstudio/htmltools)
 * [htmlwidgets](https://github.com/ramnathv/htmlwidgets)
 ## Software Platforms
+* [MAGMA](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004219#references)
 * [NDEx](https://home.ndexbio.org/index/)
 * [Cytoscape ver.3.10.3](https://cytoscape.org/)
 * [yFiles](https://www.yworks.com/products/yfiles-layout-algorithms-for-cytoscape)
