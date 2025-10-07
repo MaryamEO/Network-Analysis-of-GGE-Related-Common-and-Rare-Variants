@@ -37,7 +37,7 @@ Here we have listed the databases that have been queried for the stated analysis
 * [RNA HPA Brain Gene Data](https://www.proteinatlas.org/about/download)
 * [The Human Gene Mutation Database](https://www.hgmd.cf.ac.uk/ac/index.php)
 * [Allen_Brain_Atlas_10x_scRNA_2021 Database](https://maayanlab.cloud/Enrichr/#libraries)
-* [Drug-Gene Interaction Database](https://www.dgidb.org/)
+* [Drug-Gene Interaction Database](https://maayanlab.cloud/Enrichr/#libraries)
 * [Mouse Genome Informatics (MGI) Database](https://www.informatics.jax.org/)
 * [FinnGen](https://www.finngen.fi/en)
 * [DisGeNET Database](https://www.disgenet.org/)
