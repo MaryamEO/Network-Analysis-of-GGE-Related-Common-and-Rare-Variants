@@ -5,7 +5,6 @@ if (!require ('pacman')){
   library(pacman)
 }
 
-
 p_load(dplyr,
        data.table,
        tidyverse,
@@ -14,7 +13,10 @@ p_load(dplyr,
        tidygraph,
        signatureSearch,
        networkD3,
-       simplifyEnrichment)
+       simplifyEnrichment,
+       htmltools,
+       magrittr,
+       htmlwidgets)
 
 set.seed(123)
 
@@ -223,10 +225,6 @@ links <- data.frame(node_gene, node_drug)
 links <- links%>%
   dplyr::mutate(n = 1) %>%
   dplyr::mutate(as.factor(n))
-
-library(htmltools)
-library(magrittr)
-library(htmlwidgets)
 
 forceNetwork(Links = links,
              Nodes = nodes,
