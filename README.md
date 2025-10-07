@@ -33,7 +33,7 @@ Here we have listed the software that have been employed for the stated analysis
 Here we have listed the databases that have been queried for the stated analysis.
 * [ILAE Consortium on Complex Epilepsies; GGE-GWAS](https://www.nature.com/articles/s41588-023-01485-w)
 * [Epi25 collaborative; GGE-WES](https://www.nature.com/articles/s41593-024-01747-8)
-* [Monogenic Epilepsy Genes](https://github.com/bahlolab/genes4epilepsy)
+* [Genes4Epilepsy; Monogenic Epilepsy Genes](https://github.com/bahlolab/genes4epilepsy)
 * [RNA HPA Brain Gene Data](https://www.proteinatlas.org/about/download)
 * [The Human Gene Mutation Database](https://www.hgmd.cf.ac.uk/ac/index.php)
 * [Allen_Brain_Atlas_10x_scRNA_2021 Database](https://maayanlab.cloud/Enrichr/#libraries)
