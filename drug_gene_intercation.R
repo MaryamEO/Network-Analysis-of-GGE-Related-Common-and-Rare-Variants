@@ -6,26 +6,15 @@ if (!require ('pacman')){
 }
 
 
-p_load(readr,
-       igraph,
-       dplyr,
-       ggplot2,
+p_load(dplyr,
        data.table,
        tidyverse,
-       scales,
-       knitr,
-       orthogene,
        limma,
        enrichR,
-       EnrichIntersect,
-       ggraph,
-       tidygraph
-       ,signatureSearch
-       ,networkD3,
-       gplots,
-       simplifyEnrichment
-       )
-
+       tidygraph,
+       signatureSearch,
+       networkD3,
+       simplifyEnrichment)
 
 set.seed(123)
 
