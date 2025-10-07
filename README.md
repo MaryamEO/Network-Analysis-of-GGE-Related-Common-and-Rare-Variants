@@ -39,6 +39,7 @@ Here we have listed the datbases that have been quried for the stated analysis.
 * [Allen_Brain_Atlas_10x_scRNA_2021 Database](https://maayanlab.cloud/Enrichr/#libraries)
 * [Drug-Gene Interaction Database](https://www.dgidb.org/)
 * [Mouse Genome Informatics (MGI) Database](https://www.informatics.jax.org/)
+* [FinnGen](https://www.finngen.fi/en)
 * [DisGeNET Database](https://www.disgenet.org/)
 
 
