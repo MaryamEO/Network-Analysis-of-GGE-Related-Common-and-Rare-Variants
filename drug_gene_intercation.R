@@ -5,8 +5,7 @@ if (!require ('pacman')){
   library(pacman)
 }
 
-p_load(dplyr,
-       data.table,
+p_load(data.table,
        tidyverse,
        limma,
        enrichR,
@@ -15,7 +14,6 @@ p_load(dplyr,
        networkD3,
        simplifyEnrichment,
        htmltools,
-       magrittr,
        htmlwidgets)
 
 set.seed(123)
