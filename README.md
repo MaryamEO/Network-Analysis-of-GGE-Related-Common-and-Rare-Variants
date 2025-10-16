@@ -23,6 +23,7 @@ Here we have listed the software that have been employed for the stated analysis
 * [ggtext](https://github.com/wilkelab/ggtext)
 * [htmltools](https://github.com/rstudio/htmltools)
 * [htmlwidgets](https://github.com/ramnathv/htmlwidgets)
+* [webshot](https://wch.github.io/webshot/index.html)
 ## Software Platforms
 * [MAGMA](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004219#references)
 * [NDEx](https://home.ndexbio.org/index/)
