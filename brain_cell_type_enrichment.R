@@ -110,8 +110,8 @@ Data_cluster_sub <- Data_cluster %>%
   dplyr::group_by(subnetwork) %>%
   dplyr::filter (Adjusted.P.value < 0.05) %>%
   dplyr::filter (Odds.Ratio == max(Odds.Ratio)) %>%
-  mutate(min_Adjusted_P_value = Term) %>%
-  ungroup()
+  dplyr::mutate(min_Adjusted_P_value = Term) %>%
+  dplyr::ungroup()
 
 data <- as.data.frame(table(Data_cluster_sub$neuron_type 
                             ,useNA = "ifany"
