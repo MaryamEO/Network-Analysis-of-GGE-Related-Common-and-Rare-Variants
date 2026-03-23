@@ -10,8 +10,6 @@ p_load(data.table,
        tidyverse,
        enrichR)
 
-# https://cran.r-project.org/web/packages/enrichR/vignettes/enrichR.html
-
 websiteLive <- getOption("enrichR.live")
 if (websiteLive) {
   listEnrichrSites()
