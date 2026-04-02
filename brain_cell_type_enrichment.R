@@ -1,5 +1,5 @@
 #########################################################################################################################################
-# The R script for identifying brain-based cell type enrichment analysis across distinct subnetworks using the corresponding R packages #
+# The R script for brain-based cell type enrichment analysis across distinct subnetworks using the corresponding R packages #
 #########################################################################################################################################
 
 # loading the libraries 
