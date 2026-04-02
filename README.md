@@ -13,6 +13,7 @@ Here we have listed the software that have been employed for the stated analysis
 * [openxlsx](https://github.com/ycphs/openxlsx)
 * [UpSetR](https://github.com/hms-dbmi/UpSetR)
 * [HGNChelper](https://github.com/waldronlab/HGNChelper)
+* [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)
 * [pacman](https://github.com/trinker/pacman)
 * [enrichR](https://github.com/trinker/pacman)
 * [signatureSearch](https://bioconductor.org/packages/release/bioc/html/signatureSearch.html)
