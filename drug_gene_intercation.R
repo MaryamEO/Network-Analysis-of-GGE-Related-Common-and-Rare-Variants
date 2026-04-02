@@ -1,3 +1,6 @@
+######################################################################################################################
+# The R script for identifying drug-gene interactions across distinct subnetworks using the corresponding R packages #
+######################################################################################################################
 
 # loading the libraries 
 if (!require ('pacman')){
@@ -13,7 +16,6 @@ p_load(readr,
        data.table,
        tidyverse,
        scales,
-       knitr,
        orthogene,
        limma,
        enrichR,
@@ -42,7 +44,9 @@ if (websiteLive) {
   dbs <- listEnrichrDbs()
 }
 
-dbs <- c("DGIdb_Drug_Targets_2024") #  the dataset 
+#  the dataset
+
+dbs <- c("DGIdb_Drug_Targets_2024")  
 
 # Reading the file with the subnetworks information 
 
@@ -54,7 +58,7 @@ list_subNetwork <- lapply(split(subNetwork, by = "represents"), function(x) unli
 
 clusters <- names(list_subNetwork)
 
-# Retrieving the lists of drugs and their corresponding go terms associated with the genes within each cluster 
+# Retrieving the lists of drugs and their corresponding GO terms associated with the genes within each cluster 
 
 data <- tibble::tibble()
 
@@ -64,7 +68,7 @@ for(cluster in clusters) {
   
   gene_list_input <- as.data.frame(list_subNetwork[[cluster]]) 
   
-  # Making sure the name of genes are based on the latest version 
+  # Making sure the names of genes are based on the latest version 
   
   gene_list_input <- gene_list_input %>%
     dplyr::mutate(Symbols = alias2SymbolTable(gene_list_input$`list_subNetwork[[cluster]]`)) %>%
@@ -137,8 +141,6 @@ write_tsv(data,
           "Drug_GO_Cluster_PTV.tsv",
           col_names = TRUE)
 
-
-  
 # Clustering the semantic similarity matrix of the identified GO terms related to the set of drugs 
 
 networkData <-  fread ("Drug_GO_Cluster_PTV.tsv")
@@ -177,11 +179,10 @@ drug.net <-  as_tbl_graph(networkData)
 
 drug.net %>%
   activate(nodes) %>%
-  mutate(centrality = centrality_alpha()) %>%
-  mutate (degree = centrality_degree())-> drug_net
+  dplyr::mutate(centrality = centrality_alpha()) %>%
+  dplyr::mutate (degree = centrality_degree())-> drug_net
 
 drug_net <- as_tibble(drug_net)
-
 
 node_gene <- c(networkData$Symbols)
 node_drug <- c(networkData$Term)
@@ -222,8 +223,7 @@ write_tsv(nodes,
           "nodes_PTV.tsv",
           col_names = TRUE)
 
-  
-  # Scaling centrality values to the desired size range
+# Scaling centrality values to the desired size range
 
 node_gene <- match(node_gene, levels(nodeFactors)) - 1
 
