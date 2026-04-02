@@ -1,10 +1,12 @@
+#########################################################################################################################################
+# The R script for identifying brain-based cell type enrichment analysis across distinct subnetworks using the corresponding R packages #
+#########################################################################################################################################
 
 # loading the libraries 
 if (!require ('pacman')){
   install.packages('pacman', dependencies = TRUE)
   library(pacman)
 }
-
 
 p_load(data.table,
        tidyverse,
@@ -24,7 +26,7 @@ dbs <- c("Allen_Brain_Atlas_10x_scRNA_2021") #  the dataset
 
 subNetwork <- fread ("hierarchy_filter_GGE_ptv.tsv")
 
-# splitting the network to the identified subnetworks 
+# splitting the network into the identified subnetworks 
 
 list_subNetwork <- lapply(split(subNetwork, by = "represents"), function(x) unlist(strsplit(x$CD_MemberList, " ")))
 
@@ -69,10 +71,8 @@ for(cluster in clusters) {
   }
 }
 
-
 write_tsv(Table, "Allen_Brain_Atlas_PTV.tsv",
           col_names = TRUE)
-
 
 # Map the data to this taxonomy that has been provided in this paper "https://www.nature.com/articles/s41586-021-03465-8"
 
