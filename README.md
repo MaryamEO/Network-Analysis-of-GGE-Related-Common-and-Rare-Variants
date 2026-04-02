@@ -30,7 +30,7 @@ Here we have listed the software that have been employed for the stated analysis
 * [NDEx](https://home.ndexbio.org/index/)
 * [Cytoscape ver.3.10.3](https://cytoscape.org/)
 * [yFiles](https://www.yworks.com/products/yfiles-layout-algorithms-for-cytoscape)
-
+* [GNU Parallel](https://www.gnu.org/software/parallel/sphinx.html)
 # Databases 
 Here we have listed the databases that have been queried for the stated analysis.
 * [ILAE Consortium on Complex Epilepsies; GGE-GWAS](https://www.nature.com/articles/s41588-023-01485-w)
